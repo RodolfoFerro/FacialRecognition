@@ -18,7 +18,7 @@ label = "Rod"
 
 
 def extract_faces():
-    files = sorted(glob.glob("../.db/original/*"))
+    files = sorted(glob.glob("../._db/original/*"))
 
     filenumber = 1
     for f in tqdm(files):
@@ -61,7 +61,7 @@ def extract_faces():
             try:
                 # Resize & save face:
                 out = cv2.resize(new, (350, 350))
-                cv2.imwrite("../.db/cleaned/{}.jpg".format(filenumber), out)
+                cv2.imwrite("../._db/cleaned/{}.jpg".format(filenumber), out)
             except:
                 pass
         filenumber += 1

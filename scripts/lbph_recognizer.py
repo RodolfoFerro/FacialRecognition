@@ -18,7 +18,7 @@ lbhpface = cv2.face.createLBPHFaceRecognizer()
 def recognize_person():
     # Create datasets:
     train_lbls, train_data = [], []
-    train = sorted(glob.glob("../.db/cleaned/*"))
+    train = sorted(glob.glob("../._db/cleaned/*"))
     for item in train:
         image = cv2.imread(item)
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
