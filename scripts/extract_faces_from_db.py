@@ -11,8 +11,8 @@
 # according to the license provided and its conditions.
 # ===============================================================
 
-from tqdm import tqdm
 from image_downloader import terms
+from tqdm import tqdm
 import glob
 import cv2
 
@@ -31,7 +31,7 @@ label = terms
 def extract_faces():
     files = sorted(glob.glob("../db/original/*"))
 
-    filenumber = 1
+    f_num = 1
     for f in tqdm(files):
         img = cv2.imread(f)
 
@@ -71,10 +71,10 @@ def extract_faces():
             try:
                 # Resize & save face:
                 out = cv2.resize(new, (350, 350))
-                cv2.imwrite("../db/train/{}.jpg".format(filenumber), out)
+                cv2.imwrite("../db/train/image_{:0>4}.jpg".format(f_num), out)
             except Exception:
                 pass
-        filenumber += 1
+        f_num += 1
 
 
 if __name__ == "__main__":
