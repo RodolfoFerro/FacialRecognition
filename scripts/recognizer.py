@@ -12,7 +12,7 @@ casc = cv2.CascadeClassifier(cvpath + "haarcascade_frontalface_default.xml")
 subjects = ["Rodolfo Ferro"]
 
 # Fisher Face classifier:
-lbhpface = cv2.face.createLBPHFaceRecognizer()
+face_rec = cv2.face.createLBPHFaceRecognizer()
 
 
 def recognize_person():
@@ -29,7 +29,7 @@ def recognize_person():
     print("\n\n{:=<40}".format(""))
     print("Train LBHP Face Classifier.")
     print("Size of training set is {} images.".format(len(train_lbls)))
-    lbhpface.train(train_data, np.array(train_lbls))
+    face_rec.train(train_data, np.array(train_lbls))
 
     # Load video capture:
     cap = cv2.VideoCapture(0)
@@ -54,12 +54,12 @@ def recognize_person():
             out = cv2.resize(out, (350, 350))
 
             # Predict face:
-            pred = lbhpface.predict(out)
+            pred = face_rec.predict(out)
             cv2.rectangle(img, (x, y), (x + w, y + h), (180, 255, 10), 2)
 
             if pred[1] < 45:
                 # cv2.putText(img, 'Face {}'.format(subjects[pred[0]]),
-                cv2.putText(img, '{}'.format(subject[0]),
+                cv2.putText(img, '{}'.format(subjects[0]),
                             (x + w//6, y - 15), cv2.FONT_HERSHEY_SIMPLEX,
                             0.003*w, (255, 180, 10), 2, cv2.LINE_AA)
             else:
