@@ -12,22 +12,20 @@
 # ===============================================================
 
 from tqdm import tqdm
+from image_downloader import terms
 import glob
 import cv2
 
 
 # Path to Haar Cascades:
 cvpath = "../haarcascades/"
-face_det_01 = cv2.CascadeClassifier(
-    cvpath + "haarcascade_frontalface_default.xml")
-face_det_02 = cv2.CascadeClassifier(
-    cvpath + "haarcascade_frontalface_alt2.xml")
-face_det_03 = cv2.CascadeClassifier(
-    cvpath + "haarcascade_frontalface_alt.xml")
-face_det_04 = cv2.CascadeClassifier(
-    cvpath + "haarcascade_frontalface_alt_tree.xml")
+hcff = "haarcascade_frontalface"
+face_det_01 = cv2.CascadeClassifier(cvpath + "{}_default.xml".format(hcff))
+face_det_02 = cv2.CascadeClassifier(cvpath + "{}_alt2.xml".format(hcff))
+face_det_03 = cv2.CascadeClassifier(cvpath + "{}_alt.xml".format(hcff))
+face_det_04 = cv2.CascadeClassifier(cvpath + "{}_alt_tree.xml".format(hcff))
 
-label = "Rod"
+label = terms
 
 
 def extract_faces():
@@ -67,7 +65,6 @@ def extract_faces():
             facefeatures = ""
 
         for (x, y, w, h) in facefeatures:
-            # pri3t("Face found in file: {}".format(f))
             # Crop face:
             new = gray[y:y + h, x:x + w]
 
