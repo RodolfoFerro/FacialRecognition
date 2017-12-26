@@ -1,4 +1,16 @@
-from tqdm import tqdm
+# ===============================================================
+# Author: Rodolfo Ferro Pérez
+# Email: ferro@cimat.mx
+# Twitter: @FerroRodolfo
+#
+# Script: Gesture detector by using convexity defects.
+#
+# ABOUT COPYING OR USING PARTIAL INFORMATION:
+# This script was originally created by Rodolfo Ferro. Any
+# explicit usage of this script or its contents is granted
+# according to the license provided and its conditions.
+# ===============================================================
+
 import numpy as np
 import glob
 import cv2
@@ -34,7 +46,7 @@ def recognize_person():
     # Load video capture:
     cap = cv2.VideoCapture(0)
 
-    while(True):
+    while True:
         # Capture frame-by-frame:
         ret, img = cap.read()
 
