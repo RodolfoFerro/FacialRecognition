@@ -75,7 +75,7 @@ def extract_faces():
                 # Resize & save face:
                 out = cv2.resize(new, (350, 350))
                 cv2.imwrite("../db/train/{}.jpg".format(filenumber), out)
-            except:
+            except Exception:
                 pass
         filenumber += 1
 
