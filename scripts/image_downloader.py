@@ -13,6 +13,7 @@
 
 from imagesoup import ImageSoup
 from tqdm import tqdm
+import os
 
 
 # Set number of images and terms to look for:
@@ -21,6 +22,10 @@ terms = "Barack Obama"
 
 # Define paths:
 db_path = "../db/original/"
+
+# Clean folders:
+os.system("rm ../db/original/*")
+os.system("rm ../db/train/*")
 
 # Create soup and search
 print("Looking for images...")
