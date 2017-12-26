@@ -1,1 +1,3 @@
-# Facial recognition using Python + OpenCV
+# Fatial recognition using OpenCV
+
+This project illustrates how to create a face recognizer...
