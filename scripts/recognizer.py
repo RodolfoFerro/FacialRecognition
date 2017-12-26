@@ -3,7 +3,7 @@
 # Email: ferro@cimat.mx
 # Twitter: @FerroRodolfo
 #
-# Script: Gesture detector by using convexity defects.
+# Script: Face recognizer by using an LBHP classifier.
 #
 # ABOUT COPYING OR USING PARTIAL INFORMATION:
 # This script was originally created by Rodolfo Ferro. Any

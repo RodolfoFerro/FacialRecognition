@@ -1,3 +1,16 @@
+# ===============================================================
+# Author: Rodolfo Ferro Pérez
+# Email: ferro@cimat.mx
+# Twitter: @FerroRodolfo
+#
+# Script: Script to extract faces from database folder.
+#
+# ABOUT COPYING OR USING PARTIAL INFORMATION:
+# This script was originally created by Rodolfo Ferro. Any
+# explicit usage of this script or its contents is granted
+# according to the license provided and its conditions.
+# ===============================================================
+
 from tqdm import tqdm
 import glob
 import cv2
@@ -18,7 +31,7 @@ label = "Rod"
 
 
 def extract_faces():
-    files = sorted(glob.glob("../._db/original/*"))
+    files = sorted(glob.glob("../db/original/*"))
 
     filenumber = 1
     for f in tqdm(files):
@@ -61,7 +74,7 @@ def extract_faces():
             try:
                 # Resize & save face:
                 out = cv2.resize(new, (350, 350))
-                cv2.imwrite("../._db/cleaned/{}.jpg".format(filenumber), out)
+                cv2.imwrite("../db/cleaned/{}.jpg".format(filenumber), out)
             except:
                 pass
         filenumber += 1
