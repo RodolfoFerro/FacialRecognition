@@ -2,7 +2,8 @@
 
 This project illustrates how to create a face recognizer...
 
-Example of output:
+### Example of output:
+
 [![Testing my "Tom Holland" Face Recognizer using Python + OpenCV](http://img.youtube.com/vi/y3ozhUbXeug/0.jpg)](http://www.youtube.com/watch?v=y3ozhUbXeug)
 
 ## References:
