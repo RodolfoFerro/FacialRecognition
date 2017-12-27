@@ -1,6 +1,6 @@
 # Fatial recognition using OpenCV
 
-This project illustrates how to create a face recognizer...
+This project illustrates how to create a "Tom Holland" face recognizer by only using OpenCV classifiers.
 
 ### Example of output:
 
